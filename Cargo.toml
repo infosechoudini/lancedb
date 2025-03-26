@@ -21,16 +21,16 @@ categories = ["database-implementations"]
 rust-version = "1.78.0"
 
 [workspace.dependencies]
-lance = { "version" = "=0.25.0", "features" = [
+lance = { "version" = "=0.25.1", "features" = [
     "dynamodb",
-], tag = "v0.25.0-beta.5", git = "https://github.com/lancedb/lance.git" }
-lance-io = { version = "=0.25.0", tag = "v0.25.0-beta.5", git = "https://github.com/lancedb/lance.git" }
-lance-index = { version = "=0.25.0", tag = "v0.25.0-beta.5", git = "https://github.com/lancedb/lance.git" }
-lance-linalg = { version = "=0.25.0", tag = "v0.25.0-beta.5", git = "https://github.com/lancedb/lance.git" }
-lance-table = { version = "=0.25.0", tag = "v0.25.0-beta.5", git = "https://github.com/lancedb/lance.git" }
-lance-testing = { version = "=0.25.0", tag = "v0.25.0-beta.5", git = "https://github.com/lancedb/lance.git" }
-lance-datafusion = { version = "=0.25.0", tag = "v0.25.0-beta.5", git = "https://github.com/lancedb/lance.git" }
-lance-encoding = { version = "=0.25.0", tag = "v0.25.0-beta.5", git = "https://github.com/lancedb/lance.git" }
+], git = "https://github.com/lancedb/lance.git", branch = "main" }
+lance-io = { version = "=0.25.1", git = "https://github.com/lancedb/lance.git", branch = "main" }
+lance-index = { version = "=0.25.1", git = "https://github.com/lancedb/lance.git", branch = "main" }
+lance-linalg = { version = "=0.25.1", git = "https://github.com/lancedb/lance.git", branch = "main" }
+lance-table = { version = "=0.25.1", git = "https://github.com/lancedb/lance.git", branch = "main" }
+lance-testing = { version = "=0.25.1", git = "https://github.com/lancedb/lance.git", branch = "main" }
+lance-datafusion = { version = "=0.25.1", git = "https://github.com/lancedb/lance.git", branch = "main" }
+lance-encoding = { version = "=0.25.1", git = "https://github.com/lancedb/lance.git", branch = "main" }
 # Note that this one does not include pyarrow
 arrow = { version = "54.1", optional = false }
 arrow-array = "54.1"
@@ -74,4 +74,7 @@ base64ct = "=1.6.0"
 crunchy = "=0.2.2"
 
 # Workaround for: https://github.com/Lokathor/bytemuck/issues/306
-bytemuck_derive = ">=1.8.1, <1.9.0"
+bytemuck_derive = ">=1.9.2"
+
+[patch.crates-io]
+deranged = { version = "0.4.1", git = "https://github.com/jhpratt/deranged" }
